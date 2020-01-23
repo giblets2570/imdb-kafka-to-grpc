@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package tvshows;
+
+service TvshowRPC {
+  rpc getGoodTvShows(ShowRequest) returns (stream ShowResponse) {}
+}
+
+message ShowRequest {
+  string min_rating = 1;
+}
+
+message ShowResponse{
+  string name = 1;
+  string rating = 2;
+}
